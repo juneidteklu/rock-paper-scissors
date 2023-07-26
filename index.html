@@ -1,3 +1,30 @@
 <script>
+    let userChoice = prompt('Rock, Paper, or Scissors');
+    getComputerChoice();
     
+
+    function getComputerChoice(){
+       let ranNumber = Math.floor(Math.random()*3);
+       let computerChoice;
+       switch(ranNumber){
+        case 0: computerChoice = "Rock";
+        break;
+        case 1: computerChoice = "Paper";
+        break;
+        case 2: computerChoice = "Scissors";
+        break;
+       }
+       
+       console.log(computerChoice);
+    }
+
+
+
+
+
+
+
+
+
+
 </script>
