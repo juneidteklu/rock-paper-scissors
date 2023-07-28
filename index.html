@@ -1,9 +1,26 @@
 <script>
-    let uneditedUserChoice = prompt('Rock, Paper, or Scissors');
-    getComputerChoice();
-    
-    
+    let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
+   
 
+    //*Make the users input edited to be the same format as the computerChoice string*//
+        let firstLetter = uneditedUserChoice.charAt(0).toUpperCase();
+        let restOfString = uneditedUserChoice.slice(1);
+        let capitalizedString = firstLetter + restOfString;
+        
+        
+        console.log(capitalizedString);
+
+        getComputerChoice();
+       
+
+
+
+
+
+       
+    
+    
+//*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
     function getComputerChoice(){
        let ranNumber = Math.floor(Math.random()*3);
        let computerChoice;
@@ -15,13 +32,12 @@
         case 2: computerChoice = "Scissors";
         break;
        }
-       
+
        return computerChoice;
     }
 
-    function oneRound(userChoice, computerChoice){
+    
 
-    }
 
 
 </script>
