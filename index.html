@@ -8,17 +8,10 @@
         let capitalizedString = firstLetter + restOfString;
         
         
-        console.log(capitalizedString);
-
-        getComputerChoice();
-       
-
-
-
-
-
-       
     
+
+        getComputerChoice();  
+        oneGame(getComputerChoice(), capitalizedString);
     
 //*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
     function getComputerChoice(){
@@ -35,6 +28,34 @@
 
        return computerChoice;
     }
+
+    function oneGame(computerSelection,playerSelection){
+        if(computerSelection == playerSelection){
+            alert('Draw');}
+        else if(
+            playerSelection == 'Rock'&& computerSelection == 'Paper'||
+            playerSelection == 'Paper' && computerSelection == 'Scissors'||
+            playerSelection == 'Scissors' && computerSelection == 'Rock'
+            ){alert('loser');
+        }
+        else if(
+            playerSelection == 'Rock' && computerSelection == 'Scissors'||
+            playerSelection == 'Paper' && computerSelection == 'Rock'||
+            playerSelection == 'Scissors' && computerSelection == 'Paper'
+        ){
+            alert('You win you sexy bastard')
+        }
+        else{
+            alert('Invalid input');
+        }
+        
+
+        }
+            
+
+    
+
+
 
     
 
