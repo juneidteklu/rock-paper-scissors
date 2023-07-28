@@ -12,6 +12,7 @@
 
         getComputerChoice();  
         oneGame(getComputerChoice(), capitalizedString);
+        fullGame(oneGame());
     
 //*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
     function getComputerChoice(){
@@ -31,26 +32,51 @@
 
     function oneGame(computerSelection,playerSelection){
         if(computerSelection == playerSelection){
-            alert('Draw');}
+            let resultDraw = alert('Draw');
+            return resultDraw;
+        
+        }
         else if(
             playerSelection == 'Rock'&& computerSelection == 'Paper'||
             playerSelection == 'Paper' && computerSelection == 'Scissors'||
             playerSelection == 'Scissors' && computerSelection == 'Rock'
-            ){alert('loser');
+            ){
+               let resultLose = alert('You lost');
+               return resultLose;
+                
+
         }
         else if(
             playerSelection == 'Rock' && computerSelection == 'Scissors'||
             playerSelection == 'Paper' && computerSelection == 'Rock'||
             playerSelection == 'Scissors' && computerSelection == 'Paper'
         ){
-            alert('You win you sexy bastard')
+            let resultWin = alert('You won');
+            return resultWin;
         }
         else{
             alert('Invalid input');
         }
         
-
+    }
+    function fullGame(oneRound){
+        let yourWins;
+        let computerWins;
+       
+        if (oneRound == 'You won'){
+            yourWins += 1;
         }
+        else if(oneRound == 'You lost'){
+            computerWins += 1
+        }
+        else{
+            alert('draw');
+        }
+        for (let i = 0; i > 5; i++);
+        
+
+
+    }
             
 
     
