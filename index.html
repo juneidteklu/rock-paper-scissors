@@ -1,17 +1,20 @@
 <script>
-    let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
+
+    function getUserChoice(){
+        let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
    
 
     //*Make the users input edited to be the same format as the computerChoice string*//
         let firstLetter = uneditedUserChoice.charAt(0).toUpperCase();
         let restOfString = uneditedUserChoice.slice(1);
         let capitalizedString = firstLetter + restOfString;
-        
+        return capitalizedString;
+    }
         
     
 
         getComputerChoice();  
-        oneGame(getComputerChoice(), capitalizedString);
+        
         fullGame(oneGame());
     
 //*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
@@ -31,8 +34,9 @@
     }
 
     function oneGame(computerSelection,playerSelection){
+        
         if(computerSelection == playerSelection){
-            let resultDraw = alert('Draw');
+            let resultDraw = 'Draw';
             return resultDraw;
         
         }
@@ -41,7 +45,7 @@
             playerSelection == 'Paper' && computerSelection == 'Scissors'||
             playerSelection == 'Scissors' && computerSelection == 'Rock'
             ){
-               let resultLose = alert('You lost');
+               let resultLose = 'You lost';
                return resultLose;
                 
 
@@ -51,7 +55,7 @@
             playerSelection == 'Paper' && computerSelection == 'Rock'||
             playerSelection == 'Scissors' && computerSelection == 'Paper'
         ){
-            let resultWin = alert('You won');
+            let resultWin = 'You won';
             return resultWin;
         }
         else{
@@ -59,20 +63,25 @@
         }
         
     }
+
     function fullGame(oneRound){
         let yourWins;
         let computerWins;
+        for (let i = 0; i > 6; i++){
+           ;
+        };
+        
        
         if (oneRound == 'You won'){
             yourWins += 1;
+            console.log(yourWins);
         }
         else if(oneRound == 'You lost'){
-            computerWins += 1
+            computerWins += 1;
+            console.log(computerWins);
         }
-        else{
-            alert('draw');
-        }
-        for (let i = 0; i > 5; i++);
+        
+
         
 
 
@@ -83,7 +92,7 @@
 
 
 
-    
+
 
 
 
