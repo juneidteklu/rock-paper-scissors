@@ -1,4 +1,6 @@
 <script>
+     let computerWins = 0;
+    let yourWins = 0;
 
     function getUserChoice(){
         let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
@@ -13,9 +15,11 @@
         
     
 
-        getComputerChoice();  
         
-        fullGame(oneGame());
+        countWins(oneGame(getComputerChoice(),getUserChoice()));
+        
+        
+       
     
 //*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
     function getComputerChoice(){
@@ -37,7 +41,9 @@
         
         if(computerSelection == playerSelection){
             let resultDraw = 'Draw';
+            alert('its a draw');
             return resultDraw;
+            
         
         }
         else if(
@@ -46,6 +52,7 @@
             playerSelection == 'Scissors' && computerSelection == 'Rock'
             ){
                let resultLose = 'You lost';
+               alert('You lost');
                return resultLose;
                 
 
@@ -56,6 +63,7 @@
             playerSelection == 'Scissors' && computerSelection == 'Paper'
         ){
             let resultWin = 'You won';
+            alert('You win!');
             return resultWin;
         }
         else{
@@ -64,24 +72,36 @@
         
     }
 
+   
+
+    function countWins(eachRound){
+        
+
+        if (eachRound == 'You won'){
+            yourWins = yourWins + 1;
+            
+        }
+        else if(eachRound == 'You lost'){
+            computerWins++;
+            
+        }
+        console.log(yourWins);
+        console.log(computerWins);
+        
+
+
+
+
+    }
+
     function fullGame(oneRound){
-        let yourWins;
-        let computerWins;
-        for (let i = 0; i > 6; i++){
-           ;
+        
+        for (let i = 0; i > 5; i++){
+           oneGame();
         };
         
        
-        if (oneRound == 'You won'){
-            yourWins += 1;
-            console.log(yourWins);
-        }
-        else if(oneRound == 'You lost'){
-            computerWins += 1;
-            console.log(computerWins);
-        }
-        
-
+        i
         
 
 
