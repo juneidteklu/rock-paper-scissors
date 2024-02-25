@@ -1,3 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    
+    <div class = "game-container"> <!-- put result- and selection-container within game-container so i can make game container with flex-direction : column and make the 
+    result container always bigger than the selection-container -->
+
+            <div class = "result-container">
+
+            </div>
+
+            <div class = "selection-container">
+
+            </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
      let computerWins = 0;
     let yourWins = 0;
@@ -16,7 +59,10 @@
     
 
         
-        countWins(oneGame(getComputerChoice(),getUserChoice()));
+
+   ;
+      //fullGame(countWins(oneGame(getComputerChoice(),getUserChoice())));
+      countWins(oneGame(getComputerChoice(),getUserChoice()))
         
         
        
@@ -75,6 +121,8 @@
    
 
     function countWins(eachRound){
+        let yourWins = 0;
+        let computerWins = 0;
         
 
         if (eachRound == 'You won'){
@@ -94,26 +142,15 @@
 
     }
 
-    function fullGame(oneRound){
+    /* function fullGame(oneRound){
         
-        for (let i = 0; i > 5; i++){
-           oneGame();
+        for (let i = 0; i < 5; i++){
+            countWins(oneGame(getComputerChoice(),getUserChoice()));
         };
-        
-       
-        i
-        
-
-
-    }
+    } */
             
 
-    
-
-
-
-
-
-
-
 </script>
+
+    </body>
+</html>
