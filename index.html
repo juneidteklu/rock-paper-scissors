@@ -109,7 +109,7 @@
                 oneGame(computerChoice, userChoice);
         }
 
-        selectionContainer.addEventListener("click", )
+        selectionContainer.addEventListener("click", displayResultsOfEachRound);
         
         
 
@@ -143,10 +143,20 @@
     function oneGame(computerSelection,playerSelection){
         const computer = document.querySelector("#computer");
         const player = document.querySelector("#player");
+        const yourResultListItem = document.createElement("li");
+        const computerResultListItem = document.createElement("li");
+            
         
         if(computerSelection == playerSelection){
             let resultDraw = 'Draw';
-            alert('its a draw');
+
+            yourResultListItem.textContent = resultDraw;
+            player.appendChild(yourResultListItem);
+
+            computerResultListItem.textContent = resultDraw;
+            computer.appendChild(computerResultListItem);
+
+
             return resultDraw;
             
         
