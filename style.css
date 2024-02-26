@@ -43,6 +43,24 @@ div.game{
     height: 100%;
 }
 .selection.container{
-    flex: 1;
+    flex: 1 1;
     max-height: 40% ;
+    justify-content: center;
+    align-items: flex-start ;
+    padding: 10px 500px;
+}
+.selection > button {
+    padding: 10px 30px;
+    margin: 0px 30px;
+
+}
+h2{
+    margin: 0px;
+    text-align: center;
+    text-decoration: underline;
+    
+
+}
+.computer-score, .player-score{
+    padding-top: 5px;
 }
