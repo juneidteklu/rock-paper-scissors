@@ -72,24 +72,46 @@
      let computerWins = 0;
     let yourWins = 0;
 
-    function getUserChoice(){
+    /* function getUserChoice(){
         let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
    
 
-    //*Make the users input edited to be the same format as the computerChoice string*//
-        let firstLetter = uneditedUserChoice.charAt(0).toUpperCase();
+    //*Make the users input edited to be the same format as the computerChoice string*/
+    /*     let firstLetter = uneditedUserChoice.charAt(0).toUpperCase();
         let restOfString = uneditedUserChoice.slice(1);
         let capitalizedString = firstLetter + restOfString;
         return capitalizedString;
-    }
+    } */
+
+
+    /*  instead of getting the users choice through a prompt, we are getting the users choice
+    by pressing one of the three available buttons */
+        const rock = document.querySelector(".rock");
+        const paper = document.querySelector(".paper");
+        const scissors = document.querySelector(".scissors");
+        const selectionContainer = document.querySelector(".selection.container");
+
+
         
+        let userChoice =''
+        
+
+        selectionContainer.addEventListener("click",function getUserChoice(){
+            const userChoiceNode = event.target;
+            userChoice = userChoiceNode.textContent;
+            })
+        
+
+
+
+
     
 
         
 
-   ;
+    
       //fullGame(countWins(oneGame(getComputerChoice(),getUserChoice())));
-      countWins(oneGame(getComputerChoice(),getUserChoice()))
+      //countWins(oneGame(getComputerChoice(),getUserChoice()))
         
         
        
@@ -163,11 +185,9 @@
         console.log(yourWins);
         console.log(computerWins);
         
-
-
-
-
     }
+
+
 
     /* function fullGame(oneRound){
         
