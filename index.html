@@ -99,7 +99,18 @@
         selectionContainer.addEventListener("click",function getUserChoice(){
             const userChoiceNode = event.target;
             userChoice = userChoiceNode.textContent;
-            })
+                
+        })
+
+        function displayResultsOfEachRound(){
+                let computerChoice;
+                
+                getComputerChoice();
+                oneGame(computerChoice, userChoice);
+        }
+
+        selectionContainer.addEventListener("click", )
+        
         
 
 
@@ -119,7 +130,6 @@
 //*the variable computerChoice gets assigned rock paper scissors based on the value of ranNumber*//
     function getComputerChoice(){
        let ranNumber = Math.floor(Math.random()*3);
-       let computerChoice;
        switch(ranNumber){
         case 0: computerChoice = "Rock";
         break;
@@ -128,11 +138,11 @@
         case 2: computerChoice = "Scissors";
         break;
        }
-
-       return computerChoice;
     }
 
     function oneGame(computerSelection,playerSelection){
+        const computer = document.querySelector("#computer");
+        const player = document.querySelector("#player");
         
         if(computerSelection == playerSelection){
             let resultDraw = 'Draw';
