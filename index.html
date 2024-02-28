@@ -72,18 +72,6 @@
      let computerWins = 0;
     let yourWins = 0;
 
-    /* function getUserChoice(){
-        let uneditedUserChoice = prompt('Rock, Paper, or Scissors').toLowerCase();
-   
-
-    //*Make the users input edited to be the same format as the computerChoice string*/
-    /*     let firstLetter = uneditedUserChoice.charAt(0).toUpperCase();
-        let restOfString = uneditedUserChoice.slice(1);
-        let capitalizedString = firstLetter + restOfString;
-        return capitalizedString;
-    } */
-
-
     /*  instead of getting the users choice through a prompt, we are getting the users choice
     by pressing one of the three available buttons */
         const rock = document.querySelector(".rock");
@@ -167,9 +155,15 @@
             playerSelection == 'Paper' && computerSelection == 'Scissors'||
             playerSelection == 'Scissors' && computerSelection == 'Rock'
             ){
+                //player lost
                resultLose = 'You lost';
-               
-               return resultLose;
+               yourResultListItem.textContent = resultLose;
+               player.appendChild(yourResultListItem);
+
+               //computer won
+               resultWin = "You won"
+               computerResultListItem.textContent = resultWin;
+               computer.appendChild(computerResultListItem);
                 
 
         }
@@ -178,9 +172,15 @@
             playerSelection == 'Paper' && computerSelection == 'Rock'||
             playerSelection == 'Scissors' && computerSelection == 'Paper'
         ){
-            let resultWin = 'You won';
-            alert('You win!');
-            return resultWin;
+            //player won
+            resultWin = 'You won';
+            yourResultListItem.textContent = resultWin;
+            player.appendChild(yourResultListItem);
+
+            //computer lost
+            resultLose = "You lost";
+            computerResultListItem.textContent = resultLose;
+            computer.appendChild(computerResultListItem);
         }
         else{
             alert('Invalid input');
