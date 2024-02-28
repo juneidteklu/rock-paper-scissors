@@ -94,28 +94,26 @@
 
         
         let userChoice =''
+        let computerChoice;
+        let resultDraw = '';
+        let resultLose = '';
+        let resultWin = '';
+    
         
 
-        selectionContainer.addEventListener("click",function getUserChoice(){
+
+        selectionContainer.addEventListener("click",function getPlayersChoicesAndPlayOneRound(){
             const userChoiceNode = event.target;
             userChoice = userChoiceNode.textContent;
-                
-        })
+            getComputerChoice();
+            oneGame(computerChoice,userChoice);
+        });
 
-        function displayResultsOfEachRound(){
-                let computerChoice;
-                
-                getComputerChoice();
-                oneGame(computerChoice, userChoice);
-        }
+       // selectionContainer.addEventListener("click",oneGame(computerChoice,userChoice));
 
-        selectionContainer.addEventListener("click", displayResultsOfEachRound);
-        
         
 
-
-
-
+   
     
 
         
@@ -138,9 +136,12 @@
         case 2: computerChoice = "Scissors";
         break;
        }
+
+       return computerChoice;
     }
 
     function oneGame(computerSelection,playerSelection){
+
         const computer = document.querySelector("#computer");
         const player = document.querySelector("#player");
         const yourResultListItem = document.createElement("li");
@@ -148,7 +149,7 @@
             
         
         if(computerSelection == playerSelection){
-            let resultDraw = 'Draw';
+            resultDraw = 'Draw';
 
             yourResultListItem.textContent = resultDraw;
             player.appendChild(yourResultListItem);
@@ -166,8 +167,8 @@
             playerSelection == 'Paper' && computerSelection == 'Scissors'||
             playerSelection == 'Scissors' && computerSelection == 'Rock'
             ){
-               let resultLose = 'You lost';
-               alert('You lost');
+               resultLose = 'You lost';
+               
                return resultLose;
                 
 
