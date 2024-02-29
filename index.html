@@ -86,6 +86,8 @@
         let resultDraw = '';
         let resultLose = '';
         let resultWin = '';
+        
+        
     
         
 
@@ -95,14 +97,48 @@
             userChoice = userChoiceNode.textContent;
             getComputerChoice();
             oneGame(computerChoice,userChoice);
-            if(yourWins == 5 || computerWins == 5){
-    const result = document.querySelector(".results");
-    const resultDisplay = document.createElement("h1");
-    resultDisplay.textContent = "GAME OVER";
-    result.appendChild(resultDisplay);
-    }
+            endGame();
+            
 }
 );
+
+
+
+function endGame(){
+    if(yourWins == 5){
+        const result = document.querySelector(".results");
+        const resultDisplay = document.createElement("h1");
+        resultDisplay.textContent = "Congrats, you won! You finally have something to be proud about.";
+        result.appendChild(resultDisplay);
+
+        yourWins = 0;
+        computerWins = 0;
+
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+        
+        setTimeout(resetGame,3000);
+        
+
+    }
+    else if(computerWins == 5){
+        const result = document.querySelector(".results");
+        const resultDisplay = document.createElement("h1");
+        resultDisplay.textContent = "Womp womp, you lost. How did you manage to lose to a computer?";
+        result.appendChild(resultDisplay);
+
+        yourWins = 0;
+        computerWins = 0;
+
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+
+        setTimeout(resetGame, 3000);}
+        
+        
+    }
 
 
         
@@ -191,6 +227,22 @@
             computer.appendChild(computerResultListItem);
         }
     }
+
+    function resetGame(){
+        const computer = document.querySelector("#computer");
+        const player = document.querySelector("#player");
+        const result = document.querySelector(".results")
+
+        result.removeChild;
+        player.removeChild;
+        computer.removeChild;
+
+        rock.disabled = true;
+        paper.disabled = true;
+        scissors.disabled = true;
+
+    }
+    
 
 
    
