@@ -92,15 +92,14 @@
         
 
 
-        selectionContainer.addEventListener("click",function getPlayersChoicesAndPlayOneRound(){
+    selectionContainer.addEventListener("click", function(){
             const userChoiceNode = event.target;
             userChoice = userChoiceNode.textContent;
             getComputerChoice();
             oneGame(computerChoice,userChoice);
             endGame();
-            
-}
-);
+        
+});
 
 
 
@@ -118,8 +117,8 @@ function endGame(){
         paper.disabled = true;
         scissors.disabled = true;
         
-        setTimeout(resetGame,3000);
-        
+      
+
 
     }
     else if(computerWins == 5){
@@ -135,7 +134,7 @@ function endGame(){
         paper.disabled = true;
         scissors.disabled = true;
 
-        setTimeout(resetGame, 3000);}
+    
         
         
     }
@@ -168,7 +167,9 @@ function endGame(){
        }
 
        return computerChoice;
-    }
+    }};
+
+
 
     function oneGame(computerSelection,playerSelection){
 
@@ -228,22 +229,41 @@ function endGame(){
         }
     }
 
+
     function resetGame(){
         const computer = document.querySelector("#computer");
         const player = document.querySelector("#player");
-        const result = document.querySelector(".results")
+        const result = document.querySelector(".results");
+
+        const reset = document.createElement("button");
+        reset.textContent = "Reset";
+        reset.classList.add("reset");
+        reset.addEventListener("click", resetScores);
+        selectionContainer.appendChild(reset);
+
+    }
+
+
+    function resetScores(){
+        const computer = document.querySelector("#computer");
+        const player = document.querySelector("#player");
+
+        while(computer.firstChild){
+            computer.removeChild(computer.firstChild);
+        }
+        while(player.firstChild){
+            player.removeChild(player.firstChild);
+        }
 
         result.removeChild;
-        player.removeChild;
-        computer.removeChild;
 
-        rock.disabled = true;
-        paper.disabled = true;
-        scissors.disabled = true;
+        rock.disabled = false;
+        paper.disabled = false;
+        scissors.disabled = false;
 
     }
     
-
+    
 
    
 </script>

@@ -64,3 +64,7 @@ h2{
 .computer-score, .player-score{
     padding-top: 5px;
 }
+
+.reset{
+    align-self: center;
+}
