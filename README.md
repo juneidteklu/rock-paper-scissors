@@ -3,7 +3,7 @@
 ## The current version of this program allows you to play one round of rock-paper-scissors, displaying if you won, lost, or if it was a draw. The winner of that round gets one point added to their scoreboard. 
 
 
-I have been learning web developemnt through the Odin Project for the past year and this is my first JavaScript program! The learning objectives for this project is to deepen my knowledge on functions and applying everything that I have learned so far about variables, operators, conditionals, and most importantly: problem solving. This is how my program works:
+I have been learning web development through the Odin Project for the past year and this is my first JavaScript program! The learning objectives for this project is to deepen my knowledge on functions and applying everything that I have learned so far about variables, operators, conditionals, and most importantly: problem solving. This is how my program works:
 
 *My program asks you to input rock, paper, or scissors and formats it so that only the first letter is capitalized
 
